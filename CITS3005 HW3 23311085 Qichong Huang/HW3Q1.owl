@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#"
+     xml:base="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#corresponds_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#corresponds_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#commits"/>
+        <rdfs:range rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#versions"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#has_faults -->
+
+    <owl:ObjectProperty rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#has_faults">
+        <rdfs:domain rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#file_modifications"/>
+        <rdfs:range rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#lead_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#lead_to">
+        <owl:inverseOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#manifests"/>
+        <rdfs:domain rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults"/>
+        <rdfs:range rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#manifests -->
+
+    <owl:ObjectProperty rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#manifests">
+        <rdfs:domain rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures"/>
+        <rdfs:range rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#has_fault -->
+
+    <owl:DatatypeProperty rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#has_fault">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#file_modifications"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#Projects -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#Projects"/>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#author -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#author">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#commits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#commits -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#commits">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#Projects"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failed_tests -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failed_tests">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#Projects"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failed_tests"/>
+                    <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#system_crashes"/>
+                    <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#user_reported_issues"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#Projects"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#other"/>
+                    <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_author_of_a_commit"/>
+                    <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_length_of_the_file"/>
+                    <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_size_of_the_project"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#file_modifications -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#file_modifications">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#commits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#other -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#other">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#system_crashes -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#system_crashes">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_author_of_a_commit -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_author_of_a_commit">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_length_of_the_file -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_length_of_the_file">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_size_of_the_project -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_size_of_the_project">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#faults"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#time-stamp -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#time-stamp">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#commits"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#user_reported_issues -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#user_reported_issues">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#versions -->
+
+    <owl:Class rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#versions">
+        <rdfs:subClassOf rdf:resource="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#Projects"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#author"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#file_modifications"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#time-stamp"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failed_tests"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#failures"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#system_crashes"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#user_reported_issues"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#other"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_author_of_a_commit"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_length_of_the_file"/>
+            <rdf:Description rdf:about="http://www.HW3Q1.org/11069/ontologies/2022/HW3_23311085#the_size_of_the_project"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.hw2.v2.QichongHuang23311085.org#"
+     xml:base="http://www.hw2.v2.QichongHuang23311085.org"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.hw2.v2.QichongHuang23311085.org"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#has_completed -->
+
+    <owl:ObjectProperty rdf:about="http://www.hw2.v2.QichongHuang23311085.org#has_completed">
+        <rdfs:domain rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#course"/>
+                    <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#degree"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#is_enrolled_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.hw2.v2.QichongHuang23311085.org#is_enrolled_in">
+        <rdfs:domain rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#course"/>
+                    <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#degree"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#high_school_ranking -->
+
+    <owl:DatatypeProperty rdf:about="http://www.hw2.v2.QichongHuang23311085.org#high_school_ranking">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#level -->
+
+    <owl:DatatypeProperty rdf:about="http://www.hw2.v2.QichongHuang23311085.org#level">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#degree"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#points -->
+
+    <owl:DatatypeProperty rdf:about="http://www.hw2.v2.QichongHuang23311085.org#points">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#BS -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#BS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#high_school_ranking"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">70</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#enroll"/>
+        <rdfs:comment>BS refers to Bachelor of Science</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#M100 -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#M100">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#is_enrolled_in"/>
+                        <owl:hasValue rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#Bachelor_of_Science"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#enroll"/>
+        <rdfs:comment>M100 refers to Math100</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#M200 -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#M200">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#high_school_ranking"/>
+                                <owl:someValuesFrom>
+                                    <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                        <owl:withRestrictions rdf:parseType="Collection">
+                                            <rdf:Description>
+                                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">80</xsd:minInclusive>
+                                            </rdf:Description>
+                                        </owl:withRestrictions>
+                                    </rdfs:Datatype>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#has_completed"/>
+                        <owl:hasValue rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#Math200"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#enroll"/>
+        <rdfs:comment>M200 refers to Math200</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#bs -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#bs">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#has_completed"/>
+                        <owl:hasValue rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#Math200"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#complete"/>
+        <rdfs:comment>bs refers to Bachelor of Science</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#complete -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#complete">
+        <rdfs:subClassOf rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+        <owl:disjointWith rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#enroll"/>
+        <rdfs:comment>complete is an entity meaning that the student is able to complete</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#course -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#course">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#points"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>a course is an entity with name and a number of points,whcih consists of labs,lectures,tests, exams,workshops for a student to learn some spefic areas of knowledge</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#degree -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#degree">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#level"/>
+                        <owl:hasValue>PhD</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#level"/>
+                        <owl:hasValue>bachelors</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#level"/>
+                        <owl:hasValue>certificate</owl:hasValue>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>degree is an entity with name and level, consists of a series of courses for a student to completed in order fot student a gain knowledge in certain area</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#enroll -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#enroll">
+        <rdfs:subClassOf rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+        <rdfs:comment>enroll is an entity meaning that the student is able to enroll</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#student -->
+
+    <owl:Class rdf:about="http://www.hw2.v2.QichongHuang23311085.org#student">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#high_school_ranking"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Student is an entity with name and high_school_ranking. Student is a person who stduy in school</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#Arnold -->
+
+    <owl:NamedIndividual rdf:about="http://www.hw2.v2.QichongHuang23311085.org#Arnold">
+        <rdf:type rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+        <is_enrolled_in rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#Math100"/>
+        <high_school_ranking rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</high_school_ranking>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#Bachelor_of_Science -->
+
+    <owl:NamedIndividual rdf:about="http://www.hw2.v2.QichongHuang23311085.org#Bachelor_of_Science">
+        <rdf:type rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#degree"/>
+        <level>bachelors</level>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#Math100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hw2.v2.QichongHuang23311085.org#Math100">
+        <rdf:type rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#course"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#Math200 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hw2.v2.QichongHuang23311085.org#Math200">
+        <rdf:type rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#course"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hw2.v2.QichongHuang23311085.org#Matilda -->
+
+    <owl:NamedIndividual rdf:about="http://www.hw2.v2.QichongHuang23311085.org#Matilda">
+        <rdf:type rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#student"/>
+        <is_enrolled_in rdf:resource="http://www.hw2.v2.QichongHuang23311085.org#Math200"/>
+        <high_school_ranking rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">85</high_school_ranking>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
